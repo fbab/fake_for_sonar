@@ -1,0 +1,17 @@
+dist: trusty
+sudo: required
+language: web
+
+addons:
+  sonarcloud:
+    # info obtenue sur https://sonarcloud.io/account/organizations
+    organization: "fbab-github"
+
+jdk:
+  - oraclejdk8
+
+script:
+  # lancement via maven
+  # - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  # lancement du client sonar
+  - sonar-scanner -X
